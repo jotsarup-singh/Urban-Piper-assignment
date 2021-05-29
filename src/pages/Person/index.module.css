@@ -1,0 +1,45 @@
+/* https://fwbmatch.fra1.digitaloceanspaces.com/starwars/star-wars-bg-01.jpg */
+
+.personContainer {
+  min-height: 100vh;  
+  min-width: 100vw;
+  background:linear-gradient(to right, #ccc7e2ba, #bbafc3cc), url("https://www.teahub.io/photos/full/24-246322_high-quality-star-wars-background.jpg");
+  background-repeat: no-repeat;
+}
+
+.cardContainer{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.personContainer > h2{
+  text-align: center;
+}
+ 
+.personCard {
+  /* height:calc(50px + 3vw); */
+  width:calc(200px + 6vw);;
+  padding: 4vw 3vw;
+  border: 2px solid;
+  background: rgba(233, 60, 60, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(184, 41, 176, 0.37);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin: auto;
+  font-family: sans-serif;
+  font-size:calc(10px + 0.7vw);
+}
+
+.cardButton{
+  width: fit-content;
+  border: 2px solid;
+  padding: 5px 15px;
+  margin: auto;
+}
+.cardButton:hover{
+  background-color: rgb(218, 86, 86);
+  cursor: pointer;
+}

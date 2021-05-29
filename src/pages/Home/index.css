@@ -1,36 +1,43 @@
 .inputdiv{
     position: relative;
+    /* width: 65vw; */
+    /* border: 1px solid red; */
 }
+
 .icons{
     position: absolute;
-    /* border:1px solid ; */
     height: 100%;
     z-index: 3;
     right: 0;
-    top: -0.1vh;
+    top: 0vh;
     display: flex;
   	justify-content: space-around;
   	align-items: center;
     width:20% ;
+    background-color: rgb(45,47,48);
+    border-radius: 0 26px 26px 0;
 }
+
 .icons .search{
     background-color: rgb(243, 228, 65);
     border-radius: 50%;
-    padding: 6px 7px;
-    
+    padding: 6px 7px;    
 }
+
 .icons>div{
     display: inline-block;
     padding: 1vh;
     
 }
+
 .icons>div:first-child{
     border-right:1.5px solid ;
+    cursor: pointer;
 }
 
 .search-input,.Notselected{
     width: 400px;
-    padding: 13px 24px;
+    padding: 14px 24px;
     border-radius: 25px;
     border: 0;
     outline: 0;
@@ -38,8 +45,23 @@
     background: #2d2f30;
     color: #f2f2f2;
     transition: all .20s;
+    display: flex;
+    justify-content: space-between;
+  	align-items: center;
 }
+
+.Notselected:hover{
+    background-color: rgb(243, 228, 65);
+    cursor: pointer;
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 .selected{
+    display: flex;
+    justify-content: space-between;
+  	align-items: center;
     background: rgb(243, 228, 65);
     font-weight: bold;
     width: 400px;
@@ -50,6 +72,7 @@
     font-size: 17px;
     transition: all .20s;
 }
+
 .search-inputbottomradius{
     width: 400px;
     padding: 13px 24px;
@@ -62,10 +85,9 @@
     transition: all .20s;
 }
 
-
 .container{
     border-radius: 0px 0px 25px 25px;
-    position: absolute;
+    position: fixed;
     background: #2d2f30;
     border-top: 1.5px solid black ;
 }
@@ -90,7 +112,27 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;   
 }
+
 @keyframes loader-spin {
     from   {  transform: rotate(0deg); }
     to     {  transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 650px){
+    .inputdiv input {
+        width: 100%;
+    }
+    .icons{
+        width: 0;
+    }
+    .icons >div:last-child{
+        margin: 8px; 
+    }
+    .container,.Notselected,.selected,.search-inputbottomradius{
+        width: 77.5%;
+    }
+    /* .container{
+        width: 77.5%;
+        width: 78%;
+    } */
 }

@@ -1,16 +1,19 @@
 import React,{useEffect,useState} from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import axios from 'axios';
-import './index.css';
+import styles from './index.module.css'
+import { Loading } from './Loading';
 
 function Person() {
 
   const [cardData,setCardData]=useState([])
   const [isLoading,setIsLoading]=useState(false)
   let {id}=useParams()
-
+  const history=useHistory()
   useEffect(()=>{
-   (async function callfetchdata(){
+
+    // IIFI 
+   (async function fetchdata(){
      try{
        setIsLoading(true)
        let response=await axios(`https://swapi.dev/api/people/?search=${id}`)
@@ -20,16 +23,31 @@ function Person() {
        console.log("Error Fetching Data,Error :"+err)
      }
      finally{
-       setIsLoading(false)
+       setIsLoading(true)
     }  
     })()
 
   },[id])
 
+  function handleGoBack(){
+    history.push("/")
+  }
+
   return (
-    <div className="container">
-      <h1>{cardData.name}</h1>
-    </div>
+    isLoading?(<div className={styles.personContainer}>
+    <h2>MAY THE FORCE BE WITH YOU</h2>
+    <div className={styles.cardContainer} >
+        <div className={styles.personCard}>
+          <h2>{cardData.name}</h2>
+          <p>Gender:- {cardData.gender}</p>
+          <p>Birth:- {cardData.birth_year}</p>
+          <p>Eye Color:- {cardData.eye_color}</p>
+          <p> Skin Color:- {cardData.skin_color}</p>
+          <p>Mass:- {cardData.mass}</p>
+          <div onClick={handleGoBack} className={styles.cardButton} >Go Back</div>
+        </div>
+      </div>
+    </div>):<Loading/>
   );
 }
 
