@@ -1,4 +1,16 @@
-.search-input,.styles {
+.icons{
+    position: absolute;
+    border:1px solid ;
+    padding: 1vh;
+    z-index: 3;
+    /* left: 0; */
+    /* left:100%     */
+}
+.icons>div{
+    display: inline-block;
+}
+
+.search-input,.Notselected{
     width: 400px;
     padding: 13px 24px;
     border-radius: 25px;
@@ -7,6 +19,17 @@
     font-size: 16px;
     background: #2d2f30;
     color: #f2f2f2;
+    transition: all .20s;
+}
+.selected{
+    background: #1a1b1b;
+    font-weight: bold;
+    width: 400px;
+    padding: 13px 24px;
+    border-radius: 25px;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
     transition: all .20s;
 }
 .search-inputbottomradius{
@@ -21,12 +44,19 @@
     transition: all .20s;
 }
 
+
 .container{
     border-radius: 0px 0px 25px 25px;
     position: absolute;
     background: #2d2f30;
     border-top: 1.5px solid black ;
     
+}
+
+.aw{
+    border:1px solid;
+    height: 200px;
+    width: 200px;
 }
 
 .logo {
