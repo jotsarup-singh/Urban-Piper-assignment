@@ -1,13 +1,31 @@
+.inputdiv{
+    position: relative;
+}
 .icons{
     position: absolute;
-    border:1px solid ;
-    padding: 1vh;
+    /* border:1px solid ; */
+    height: 100%;
     z-index: 3;
-    /* left: 0; */
-    /* left:100%     */
+    right: 0;
+    top: -0.1vh;
+    display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+    width:20% ;
+}
+.icons .search{
+    background-color: rgb(243, 228, 65);
+    border-radius: 50%;
+    padding: 6px 7px;
+    
 }
 .icons>div{
     display: inline-block;
+    padding: 1vh;
+    
+}
+.icons>div:first-child{
+    border-right:1.5px solid ;
 }
 
 .search-input,.Notselected{
@@ -22,14 +40,14 @@
     transition: all .20s;
 }
 .selected{
-    background: #1a1b1b;
+    background: rgb(243, 228, 65);
     font-weight: bold;
     width: 400px;
-    padding: 13px 24px;
+    padding: 12.5px 24px;
     border-radius: 25px;
     border: 0;
     outline: 0;
-    font-size: 16px;
+    font-size: 17px;
     transition: all .20s;
 }
 .search-inputbottomradius{
@@ -50,13 +68,6 @@
     position: absolute;
     background: #2d2f30;
     border-top: 1.5px solid black ;
-    
-}
-
-.aw{
-    border:1px solid;
-    height: 200px;
-    width: 200px;
 }
 
 .logo {
@@ -66,4 +77,20 @@
 
 .logo img {
     width: 200px;
+}
+
+.spinner {
+    height: 12px;
+    width: 12px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: dashed 1.5px #D0CE03;
+    animation-name: loader-spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;   
+}
+@keyframes loader-spin {
+    from   {  transform: rotate(0deg); }
+    to     {  transform: rotate(360deg); }
 }
