@@ -10,15 +10,16 @@ function Person() {
   const [isLoading,setIsLoading]=useState(false)
   let {id}=useParams()
   const history=useHistory()
+
+
   useEffect(()=>{
 
-    // IIFI 
+    // IIFI for fetching data
    (async function fetchdata(){
      try{
        setIsLoading(true)
        let response=await axios(`https://swapi.dev/api/people/?search=${id}`)
        setCardData(response.data.results[0])
-       console.log(response.data.results)
      }catch(err){
        console.log("Error Fetching Data,Error :"+err)
      }
@@ -29,6 +30,8 @@ function Person() {
 
   },[id])
 
+
+  // pushing to home page
   function handleGoBack(){
     history.push("/")
   }

@@ -6,7 +6,7 @@
   background:linear-gradient(to right, #ccc7e2ba, #bbafc3cc), url("https://www.teahub.io/photos/full/24-246322_high-quality-star-wars-background.jpg");
   background-repeat: no-repeat;
 }
-
+  
 .cardContainer{
   height: 80vh;
   display: flex;

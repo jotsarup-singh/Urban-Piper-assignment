@@ -1,7 +1,5 @@
 .inputdiv{
     position: relative;
-    /* width: 65vw; */
-    /* border: 1px solid red; */
 }
 
 .icons{
@@ -9,30 +7,33 @@
     height: 100%;
     z-index: 3;
     right: 0;
-    top: 0vh;
+    top: 0;
     display: flex;
-  	justify-content: space-around;
+    justify-content: center;
   	align-items: center;
-    width:20% ;
+    width:fit-content ;
     background-color: rgb(45,47,48);
     border-radius: 0 26px 26px 0;
+    padding: 0 1vh;
 }
 
 .icons .search{
-    background-color: rgb(243, 228, 65);
+    background-color: rgb(248, 230, 35);
     border-radius: 50%;
-    padding: 6px 7px;    
+    padding: 6px 7px 6px 7px;    
 }
 
 .icons>div{
     display: inline-block;
-    padding: 1vh;
-    
+    padding: 2vh;
 }
 
 .icons>div:first-child{
-    border-right:1.5px solid ;
+    /* border-right:1.5px solid ; */
     cursor: pointer;
+}
+.icons>div:first-child>*{
+    font-size: 21px;
 }
 
 .search-input,.Notselected{
@@ -51,7 +52,7 @@
 }
 
 .Notselected:hover{
-    background-color: rgb(243, 228, 65);
+    background-color: rgb(248, 230, 35);
     cursor: pointer;
     color: black;
     font-size: 17px;
@@ -62,7 +63,7 @@
     display: flex;
     justify-content: space-between;
   	align-items: center;
-    background: rgb(243, 228, 65);
+    background: rgb(248, 230, 35);
     font-weight: bold;
     width: 400px;
     padding: 12.5px 24px;
@@ -101,23 +102,6 @@
     width: 200px;
 }
 
-.spinner {
-    height: 12px;
-    width: 12px;
-    margin: 20px auto;
-    border-radius: 50%;
-    border: dashed 1.5px #D0CE03;
-    animation-name: loader-spin;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;   
-}
-
-@keyframes loader-spin {
-    from   {  transform: rotate(0deg); }
-    to     {  transform: rotate(360deg); }
-}
-
 @media only screen and (max-width: 650px){
     .inputdiv input {
         width: 100%;
@@ -126,13 +110,17 @@
         width: 0;
     }
     .icons >div:last-child{
-        margin: 8px; 
+        /* position: relative; */
+        right: -1vh;
     }
     .container,.Notselected,.selected,.search-inputbottomradius{
         width: 77.5%;
     }
-    /* .container{
-        width: 77.5%;
-        width: 78%;
-    } */
+    .selected{
+        width: 83%;
+    }
+    .icons{
+       padding: 0;
+    }
+    
 }

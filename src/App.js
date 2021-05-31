@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import Person from "./pages/Person";
 import HomePage from "./pages/Home";
 import NotFound from "./pages/NotFound";
-
 import './App.css';
 
 function App() {
@@ -13,6 +12,7 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <HomePage />
+            
           </Route>
           <Route path="/person/:id">
             <Person />

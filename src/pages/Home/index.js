@@ -8,7 +8,8 @@ import { GrClose } from 'react-icons/gr';
 import { ListItem } from './ListItem';
 import { useHistory } from 'react-router';
 import { v4 as uuidv4 } from 'uuid';
-
+import { Loader } from './Loader';
+import {VscClose} from 'react-icons/vsc'
 
 function HomePage() {
   const [query, setQuery] = useState('');
@@ -69,6 +70,7 @@ function handleKeydown(e){
     }
   }
   else if(e.keyCode===13 && data[0].name!=="No data"){  
+    console.log(data[selectItem])
     if(data[selectItem]!==undefined){
       history.push(`/person/${data[selectItem].name}`)            
     }
@@ -99,12 +101,12 @@ const handlemouseClick=(i)=>{
       <div className="inputdiv" >
         <input autoFocus onKeyDown={handleKeydown} onChange={setInput} value={query} className={data.length>0?"search-inputbottomradius":"search-input"} placeholder="Search by name" />  
         <div className="icons">
-          <div>
-          <GrClose onClick={handleClose} />
-          </div>
-          {isLoading?<div className="spinner"></div>:
+           <div>
+           {query &&<VscClose color="silver" onClick={handleClose}/>}
+          </div> 
+          {isLoading?<Loader/>:
           <div className="search" >
-            <IoMdSearch/>
+            <IoMdSearch />
           </div>}
         </div>
       </div>
